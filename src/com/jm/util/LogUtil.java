@@ -1,4 +1,4 @@
-package com.jm.socket;
+package com.jm.util;
 
 public class LogUtil {
 	
