@@ -24,15 +24,11 @@ package com.jm.socket;
  *  OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 
 import org.java_websocket.WebSocket;
-import org.java_websocket.WebSocketImpl;
 import org.java_websocket.handshake.ClientHandshake;
 import org.java_websocket.server.WebSocketServer;
 
@@ -65,12 +61,12 @@ public class ChatServer extends WebSocketServer {
 	@Override
 	public void onMessage( WebSocket conn, String message ) {
 		broadcast( message );
-		System.out.println( conn + ": " + message );
+		System.out.println( conn.getLocalSocketAddress() + ": " + message );
 	}
 	@Override
 	public void onMessage( WebSocket conn, ByteBuffer message ) {
 		broadcast( message.array() );
-		System.out.println( conn + ": " + message );
+		System.out.println( conn.getRemoteSocketAddress() + ": " + message );
 	}
 
 
