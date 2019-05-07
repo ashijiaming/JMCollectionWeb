@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function setVersion(version){
+	document.getElementById("version").innerHTML=version
+	//alert("aa")
+}
+
+let button = document.querySelector('button')
+let register = button.addEventListener('click', function () {
+   //LoginData.onBack();
+   LoginData.setData('18888888888','111111');
+})
+</script>
+</head>
+<body>
+<p>用于Android原生与Html交互的界面</p>
+<button onclick="setVersion(1)">显示版本号</button>
+<button onclick="LoginData.onBack()">返回上一页</button>
+<button onclick="LoginData.setData('18888888888','1111111')">注册</button>
+<p id="version"></p>
+</body>
+</html>
